@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Metacamp - Taller de Arduino</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -22,11 +22,144 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
-	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+					<h1>MetaCamp - Taller de arduino</h1>
+				</section>
+
+				<section>
+					<h2>Contenido del taller</h2>
+					<ul>
+						<li>¿Qué es arduino?</li>
+						<li>¿Qué usos tiene?</li>
+						<li>¿Cómo funciona?</li>
+						<li>Entorno de desarrollo</li>
+						<li>Ejemplo 1: encender led</li>
+						<li>Ejemplo 2: encender led a través de pulsar un botón</li>
+						<li>Ejemplo 3: relé</li>
+						<li>MQTT</li>
+						<li>Ejemplo 4: encender led a través de MQTT</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2> ¿Qué es arduino?</h2>
+				</section>
+
+				<section>
+					<h2> ¿Qué es arduino?</h2>
+					<p class="medium left"> <em>Proyecto open source de electrónica</em> </p>
+				</section>
+
+				<section>
+					<h2> ¿Qué es arduino?</h2>
+					<p class="medium left"> <em>Micro controladores</em> </p>
+				</section>
+
+				<section>
+					<h2> ¿Qué es arduino?</h2>
+					<p class="medium left"> <em>Hardware libre</em> </p>
+				</section>
+
+				<section>
+					<h2> ¿Qué usos tiene?</h2>
+				</section>
+
+				<section>
+					<h2> ¿Qué usos tiene?</h2>
+					<p class="medium left"> <em>Crear / prototipar aparatos electrónicos</em> </p>
+				</section>
+
+				<section>
+					<h2> ¿Qué usos tiene?</h2>
+					<p class="medium left"> <em>Automatización</em> </p>
+				</section>
+	
+				<section>
+					<h2> ¿Qué usos tiene?</h2>
+					<p class="medium left"> <em>Internet de las cosas</em> </p>
+				</section>
+
+				<section>
+					<h2> ¿Cómo funciona?</h2>
+				</section>
+
+				<section>
+					<h2> ¿Cómo funciona?</h2>
+					<p class="medium left"> <em>5 voltios</em> </p>
+				</section>
+				
+				<section>
+					<h2> ¿Cómo funciona?</h2>
+					<p class="medium left"> <em>Pines de entrada y salida</em> </p>
+				</section>
+				
+				<section>
+					<h2> ¿Cómo funciona?</h2>
+					<p class="medium left"> <em>Entrada digital / analógica</em> </p>
+				</section>
+
+				<section>
+					<h2> Entorno de desarrollo </h2>
+				</section>
+	
+				<section>
+					<h2> Entorno de desarrollo </h2>
+					<p class="medium left"> <em>Arduino Uno</em> </p>
+				</section>
+
+				<section>
+					<h2> Entorno de desarrollo </h2>
+					<p class="medium left"> <em>Protoboard</em> </p>
+				</section>
+
+				<section>
+					<h2> Entorno de desarrollo </h2>
+					<p class="medium left"> <em>Componentes electrónicos</em> </p>
+				</section>
+
+				<section>
+					<h2> Entorno de desarrollo </h2>
+					<p class="medium left"> <em>Arduino IDE</em> </p>
+				</section>
+
+				<section>
+					<h2> Ejemplo 1: encender led </h2>
+				</section>
+
+				<section>
+					<h2> Ejemplo 2: encender led a través de pulsar un botón</h2>
+				</section>
+				<section>
+					<h2> Ejemplo 3: rele </h2>
+				</section>
+
+				<section>
+					<h2> MQTT</h2>
+				</section>
+
+				<section>
+					<h2> MQTT</h2>
+					<p class="medium left"> <em>Message Queue Telemetry Transport</em> </p>
+				</section>
+
+				<section>
+					<h2> MQTT</h2>
+					<p class="medium left"> <em>Topología de anillo</em> </p>
+				</section>
+
+				<section>
+					<h2> MQTT</h2>
+					<p class="medium left"> <em>Comunicación en tiempo real entre diferentes dispositivos</em> </p>
+				</section>
+	
+				<section>
+					<h2> Ejemplo 4: encender led a través de MQTT </h2>
+					<!-- ¡Si este ejemplo usará reles sería mejor! -->
+				</section>
+
 			</div>
 		</div>
 
@@ -37,11 +170,19 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
 		</script>
